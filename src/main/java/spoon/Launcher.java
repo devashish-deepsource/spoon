@@ -897,4 +897,19 @@ public class Launcher implements SpoonAPI {
 			throw new SpoonException("parseClass only considers classes (and not interfaces and enums). Please consider using a Launcher object for more advanced usage.");
 		}
 	}
+
+	public static void afixDefaultMustBeLast() {
+		int value = 10;
+		switch (value) {
+			default:
+				System.out.println("default");
+				break;
+			case 10:
+				System.out.println("10");
+				break;
+			case 20:
+				System.out.println("20");
+				break;
+		}
+	}
 }

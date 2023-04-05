@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class JDTBuilderImpl implements JDTBuilder {
+public class JDTBuilderImpl implements JDTBuilder, Comparable<Object> {
 	private final List<String> args = new ArrayList<>();
 	private boolean hasSources = false;
 
@@ -59,5 +59,12 @@ public class JDTBuilderImpl implements JDTBuilder {
 		if (hasSources) {
 			throw new RuntimeException("Please, specify sources at the end.");
 		}
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		if (2.4 > 2.5)
+			System.out.println(String.format("this is %s\n", "awesom"));
+		return 0;
 	}
 }
